@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo | Nayra Kids</title>
+  <meta name="description" content="Catálogo Nayra Kids: vestidos, conjuntos, bodies, pijamas, calçados e acessórios para meninas, meninos e bebês.">
+  <meta name="theme-color" content="#FF4F8B">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <div class="faixa-topo">
+    <ul>
+      <li data-frete-gratis>Frete grátis acima de R$ 299</li>
+      <li data-parcelas>Até 3x sem juros</li>
+      <li data-troca>Primeira troca grátis em 30 dias</li>
+    </ul>
+  </div>
+
+  <header class="cabecalho">
+    <div class="cabecalho-dentro">
+      <button class="menu-botao" id="menu-botao" aria-expanded="false" aria-controls="menu">
+        <span class="menu-icone" aria-hidden="true"></span>
+        <span class="sr">Menu</span>
+      </button>
+
+      <a href="index.html" class="logo" aria-label="Nayra Kids, página inicial">
+        <span class="logo-nayra" aria-hidden="true"><span>N</span><span>A</span><span>Y</span><span>R</span><span>A</span></span>
+        <span class="logo-kids" aria-hidden="true"><span>k</span><span>i</span><span>d</span><span>s</span></span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <a href="produtos.html?para=meninas">Meninas</a>
+        <a href="produtos.html?para=meninos">Meninos</a>
+        <a href="produtos.html?para=bebe">Bebê</a>
+        <a href="produtos.html" aria-current="page">Catálogo</a>
+        <a href="index.html#tamanhos">Tabela de tamanhos</a>
+      </nav>
+
+      <div class="cabecalho-acoes">
+        <a href="produtos.html#busca" class="icone-botao" aria-label="Buscar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        </a>
+        <button type="button" class="icone-botao" data-abrir-sacola aria-label="Abrir sacola">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+          <span class="contador" data-contador-sacola hidden>0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="catalogo">
+    <div class="catalogo-topo">
+      <div>
+        <h1 id="catalogo-titulo">Todo o catálogo</h1>
+        <p id="catalogo-contagem" class="catalogo-contagem" aria-live="polite"></p>
+      </div>
+      <div class="filtro-publico" role="group" aria-label="Para quem">
+        <button type="button" data-filtro-para="">Tudo</button>
+        <button type="button" data-filtro-para="meninas">Meninas</button>
+        <button type="button" data-filtro-para="meninos">Meninos</button>
+        <button type="button" data-filtro-para="bebe">Bebê</button>
+      </div>
+    </div>
+
+    <form class="filtros" id="form-busca" role="search">
+      <label class="filtro filtro-busca" id="busca">
+        <span class="sr">Buscar peça</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+        <input type="search" id="filtro-busca" placeholder="Buscar: vestido, pijama, body…" autocomplete="off">
+      </label>
+      <label class="filtro">
+        <span class="sr">Categoria</span>
+        <select id="filtro-categoria"></select>
+      </label>
+      <label class="filtro">
+        <span class="sr">Tamanho</span>
+        <select id="filtro-tamanho"></select>
+      </label>
+      <label class="filtro">
+        <span class="sr">Ordenar</span>
+        <select id="filtro-ordem">
+          <option value="relevancia">Ordenar: destaques</option>
+          <option value="novos">Novidades primeiro</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="grade-produtos grade-catalogo" id="grade-catalogo"></div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape-dentro">
+      <div class="rodape-marca">
+        <a href="index.html" class="rodape-logo" aria-label="Nayra Kids, página inicial">
+          <img src="img/logo-nayra-kids.png" alt="" width="150" height="172" loading="lazy">
+        </a>
+        <p>Produtos infantis com qualidade e carinho.</p>
+      </div>
+      <nav class="rodape-col" aria-label="Loja">
+        <h2>Loja</h2>
+        <a href="produtos.html?para=meninas">Meninas</a>
+        <a href="produtos.html?para=meninos">Meninos</a>
+        <a href="produtos.html?para=bebe">Bebê</a>
+        <a href="produtos.html">Catálogo completo</a>
+      </nav>
+      <nav class="rodape-col" aria-label="Ajuda">
+        <h2>Ajuda</h2>
+        <a href="index.html#tamanhos">Tabela de tamanhos</a>
+        <a href="#" data-whatsapp="Olá! Quero falar sobre uma troca.">Trocas</a>
+        <a href="#" data-whatsapp="Olá, Nayra Kids!" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+      <div class="rodape-col">
+        <h2>Siga a gente</h2>
+        <a href="#" data-instagram="texto" target="_blank" rel="noopener">@nayrakids</a>
+      </div>
+    </div>
+    <p class="rodape-final">© <span data-ano>2026</span> Nayra Kids. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="#" class="whats-flutuante" data-whatsapp="Olá, Nayra Kids!" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.5A12.4 12.4 0 0 0 5.3 22.2L3.6 28.4l6.4-1.7A12.4 12.4 0 1 0 16 3.5Zm0 22.7a10.3 10.3 0 0 1-5.3-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.3 10.3 0 1 1 16 26.2Zm5.7-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.4 8.4 0 0 1-4.2-3.7c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1.1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.5 13.5 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.8a3.1 3.1 0 0 0 2.1-1.5 2.6 2.6 0 0 0 .2-1.5c-.1-.1-.3-.2-.6-.3Z"/></svg>
+  </a>
+
+  <!-- SACOLA -->
+  <div class="sacola" id="sacola" hidden>
+    <div class="sacola-fundo" id="sacola-fundo"></div>
+    <aside class="sacola-painel" role="dialog" aria-modal="true" aria-labelledby="sacola-titulo">
+      <div class="sacola-topo">
+        <h2 id="sacola-titulo">Sua sacola</h2>
+        <button type="button" class="fechar" id="sacola-fechar" aria-label="Fechar sacola">×</button>
+      </div>
+      <div class="sacola-frete" id="sacola-frete" hidden>
+        <p id="sacola-frete-texto"></p>
+        <div class="barra"><span id="sacola-frete-barra"></span></div>
+      </div>
+      <div class="sacola-itens" id="sacola-itens"></div>
+      <div class="sacola-rodape" id="sacola-rodape" hidden>
+        <p class="sacola-linha"><span>Subtotal</span><strong id="sacola-subtotal"></strong></p>
+        <p class="sacola-pix" id="sacola-pix"></p>
+        <button type="button" class="botao botao-cheio botao-largo" id="sacola-finalizar">Enviar pedido pelo WhatsApp</button>
+        <p class="sacola-obs">O frete é calculado pelo seu CEP na conversa.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- PRODUTO -->
+  <dialog class="janela" id="janela-produto" aria-labelledby="janela-titulo">
+    <button type="button" class="fechar janela-fechar" id="janela-fechar" aria-label="Fechar">×</button>
+    <div class="janela-conteudo" id="janela-conteudo"></div>
+  </dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/produtos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
